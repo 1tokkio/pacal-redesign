@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Windows reserved device name accidentally created
 nul
+
+# Claude Code local config
+.claude/
