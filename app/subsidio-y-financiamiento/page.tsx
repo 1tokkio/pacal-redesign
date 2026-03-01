@@ -129,6 +129,18 @@ const pasos = [
 
 const faqs = [
   {
+    q: "¿Qué es el subsidio habitacional?",
+    a: "Es una ayuda directa que entrega el Estado a aquellas familias que no pueden financiar por sí solas su primera vivienda. Estos dineros son aportes, es decir, no se devuelven, pero son de uso exclusivo habitacional. La vivienda a subsidiar debe ser del tipo económica, acogida al DFL N° 2, Nueva o Usada, Urbana o Rural, o bien para construir en sitio propio o para densificación predial. La ayuda se complementa con el ahorro familiar y, en caso que no alcance, se puede recurrir a un crédito hipotecario. El monto del subsidio dependerá del valor de la vivienda.",
+  },
+  {
+    q: "¿Hay diferentes tipos de subsidio?",
+    a: "Sí. Existe el Subsidio Habitacional sin complementar Crédito Hipotecario: Fondo Solidario para la Vivienda I. También el Subsidio Habitacional para complementar con Crédito Hipotecario: DS1, para Grupos Emergentes y Sectores Medios. Y por último, el Subsidio Habitacional del Programa de Protección del Patrimonio Familiar (DS 255, PPPF), que sirve para: a) Reparar y mejorar la vivienda, b) Ampliar la Vivienda, c) Acondicionamiento Térmico, d) Mejoramiento de Entorno y Equipamiento Comunitario.",
+  },
+  {
+    q: "¿Qué requisitos hay para postular a un subsidio?",
+    a: "En general, los requisitos son ser chileno o extranjero con residencia permanente, mayor de 18 años y no contar, ni él ni su cónyuge, con vivienda propia. Además se necesita la Libreta de ahorro para la vivienda con un depósito mínimo de 50 UF. Hay distintos tipos de subsidio habitacional dependiendo del estrato socioeconómico y los valores de la vivienda.",
+  },
+  {
     q: "¿Qué es el Registro Social de Hogares (RSH) y cómo afecta mi postulación?",
     a: "El RSH es el sistema que el Estado usa para identificar a las familias según su situación socioeconómica. Determina a qué subsidio puedes postular: DS49 para el 40% más vulnerable, DS1 o DS19 para el 90%. Puedes consultar tu puntaje en registrosocial.gob.cl.",
   },
@@ -137,24 +149,8 @@ const faqs = [
     a: "El subsidio habitacional lo otorga el Estado (SERVIU) y no revisa historial crediticio. Sin embargo, si necesitas complementar con crédito hipotecario, el banco sí evaluará tu comportamiento financiero. Te recomendamos regularizar deudas antes de postular al crédito.",
   },
   {
-    q: "¿Cuánto tiempo demora el proceso desde que postulo hasta recibir mi departamento?",
-    a: "El proceso completo puede tomar entre 6 y 18 meses dependiendo del estado del proyecto, la vigencia de tu subsidio y los trámites de crédito hipotecario. Proyectos con entrega inmediata pueden reducir este plazo significativamente.",
-  },
-  {
-    q: "¿Puedo usar mi subsidio en cualquier proyecto de Pacal?",
-    a: "No todos los proyectos están habilitados para todos los subsidios. Cada proyecto tiene aprobados ciertos programas (DS19, DS1, DS49, etc.). Puedes consultar a nuestros ejecutivos cuáles proyectos están disponibles para tu tipo de subsidio.",
-  },
-  {
-    q: "¿Qué pasa si pierdo mi subsidio antes de escriturar?",
-    a: "Los subsidios tienen vigencia limitada (generalmente 12 a 24 meses). Si el subsidio vence antes de la escrituración, deberás renovarlo o postular nuevamente. Por eso es importante elegir proyectos con fecha de entrega compatible con tu subsidio.",
-  },
-  {
     q: "¿Puedo pagar el pie en cuotas?",
     a: "Sí. Pacal ofrece la opción de pagar el pie en cuotas mediante tarjeta de crédito a través de Transbank en nuestras salas de venta, o vía Webpay en el Portal de Clientes. Consulta las condiciones disponibles con nuestros ejecutivos.",
-  },
-  {
-    q: "¿Qué documentos necesito para postular?",
-    a: "Generalmente se requiere: cédula de identidad vigente, liquidaciones de sueldo o acreditación de ingresos, libreta de ahorro con el monto mínimo, certificado del RSH y en algunos casos certificado de matrimonio o nacimiento de hijos. Los requisitos pueden variar según el subsidio.",
   },
   {
     q: "¿Puedo postular si trabajo de manera independiente o informal?",
