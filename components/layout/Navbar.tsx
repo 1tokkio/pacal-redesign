@@ -28,8 +28,8 @@ export default function Navbar() {
             <Image
               src="/images/logo.jpg"
               alt="Pacal"
-              width={88}
-              height={88}
+              width={82}
+              height={82}
               className="rounded-lg"
               priority
             />

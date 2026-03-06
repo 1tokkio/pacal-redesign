@@ -37,8 +37,8 @@ export default function LoginPage() {
             <Image
               src="/images/logo.jpg"
               alt="Pacal"
-              width={40}
-              height={40}
+              width={82}
+              height={82}
               className="rounded-lg"
               priority
             />
