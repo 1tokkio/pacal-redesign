@@ -1,92 +1,92 @@
-# Pacal — Portal Inmobiliario
+# Pacal — Real Estate Portal
 
-Sitio web corporativo y catálogo de proyectos para Pacal, desarrolladora inmobiliaria chilena. Construido como proyecto freelance con arquitectura headless CMS, permitiendo al cliente gestionar el contenido de forma independiente tras la entrega.
+Corporate website and project catalog for Pacal, a Chilean real estate developer. Built as a freelance project with a headless CMS architecture, allowing the client to manage content independently after delivery.
 
-## Stack tecnológico
+## Tech Stack
 
-| Capa | Tecnología |
+| Layer | Technology |
 |---|---|
 | Framework | Next.js 16 (App Router) |
-| Lenguaje | TypeScript |
-| Estilos | Tailwind CSS v4 |
-| Animaciones | Framer Motion |
-| Iconos | Lucide React |
+| Language | TypeScript |
+| Styles | Tailwind CSS v4 |
+| Animations | Framer Motion |
+| Icons | Lucide React |
 | CMS | Sanity v3 (headless) |
-| Cliente CMS | @sanity/client, @sanity/image-url |
-| Despliegue | Vercel |
-| Studio | pacal.sanity.studio (proyecto independiente) |
+| CMS Client | @sanity/client, @sanity/image-url |
+| Deployment | Vercel |
+| Studio | pacal.sanity.studio (independent project) |
 
-## Funcionalidades
+## Features
 
-- Páginas renderizadas en servidor con regeneración estática incremental (ISR, 60s)
-- Catálogo de proyectos con filtrado por tipo y programa de subsidio
-- Página de detalle con carrusel de imágenes (imagen principal + galería)
-- Fallback a datos estáticos — el sitio funciona sin que Sanity esté poblado
-- Sección de Locales Comerciales con contacto individual por unidad
-- Página de Subsidio y Financiamiento con DS49, DS1, DS19 y DS116
-- Sección de preguntas frecuentes con acordeón interactivo
-- Diseño responsive para móvil, tablet y escritorio
-- Links de contacto por WhatsApp por proyecto
-- Metadata SEO generada por página mediante la API Metadata de Next.js
-- Página de login de demostración (sin backend, solo UI)
+- Server-rendered pages with Incremental Static Regeneration (ISR, 60s)
+- Project catalog with filtering by type and subsidy program
+- Detail page with image carousel (main image + gallery)
+- Fallback to static data — the site works without Sanity being populated
+- Commercial Units section with individual contact per unit
+- Subsidy and Financing page covering DS49, DS1, DS19, and DS116
+- FAQ section with interactive accordion
+- Responsive design for mobile, tablet, and desktop
+- WhatsApp contact links per project
+- Per-page SEO metadata generated via the Next.js Metadata API
+- Demo login page (no backend, UI only)
 
-## Estructura del proyecto
+## Project Structure
 
 ```
 pacal-redesign/
-  app/                              # Páginas con App Router de Next.js
-    page.tsx                        # Inicio
-    login/page.tsx                  # Login (demostración)
+  app/                              # Pages using Next.js App Router
+    page.tsx                        # Home
+    login/page.tsx                  # Login (demo)
     proyectos/
-      page.tsx                      # Catálogo de proyectos
-      [slug]/page.tsx               # Detalle del proyecto con carrusel
+      page.tsx                      # Project catalog
+      [slug]/page.tsx               # Project detail with carousel
     locales-comerciales/
     subsidio-y-financiamiento/
     quienes-somos/
     contacto/
     salas-de-venta/
   components/
-    home/                           # Hero, Proyectos Destacados, Stats, CTA
+    home/                           # Hero, Featured Projects, Stats, CTA
     layout/                         # Navbar, Footer, LayoutShell
     projects/                       # ProjectCard, ProjectsGrid, ImageCarousel
     ui/                             # SectionTitle
   lib/
-    projects.ts                     # Datos estáticos de respaldo (6 proyectos)
+    projects.ts                     # Static fallback data (6 projects)
   public/
-    images/                         # Logo y recursos estáticos
+    images/                         # Logo and static assets
   sanity/
     lib/
-      client.ts                     # Configuración del cliente Sanity
-      fetch.ts                      # Fetching de datos con fallback estático
-      queries.ts                    # Consultas GROQ
+      client.ts                     # Sanity client configuration
+      fetch.ts                      # Data fetching with static fallback
+      queries.ts                    # GROQ queries
     schemas/
-      project.ts                    # Esquema del documento proyecto
+      project.ts                    # Project document schema
 ```
 
-## Variables de entorno
+## Environment Variables
 
-Crea un archivo `.env.local` en la raíz del proyecto:
+Create a `.env.local` file in the project root:
 
 ```
-NEXT_PUBLIC_SANITY_PROJECT_ID=tu_project_id
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
 NEXT_PUBLIC_SANITY_DATASET=production
 ```
 
-Ambas variables son obligatorias. Se obtienen desde el dashboard de Sanity en sanity.io/manage.
+Both variables are required. They can be obtained from the Sanity dashboard at sanity.io/manage.
 
-## Comandos
+## Commands
 
 ```bash
-# Instalar dependencias
+# Install dependencies
 npm install
 
-# Servidor de desarrollo (usa Webpack por incompatibilidad de Turbopack con Windows y jsdom)
+# Development server (uses Webpack due to Turbopack incompatibility with Windows and jsdom)
 npm run dev
 
-# Build de producción
+# Production build
 npm run build
 
-# Iniciar servidor de producción en local
+# Start production server locally
 npm start
 
 # Lint
@@ -95,33 +95,33 @@ npm run lint
 
 ## Sanity Studio
 
-El studio CMS es un proyecto separado ubicado en `../pacal-studio` y desplegado de forma independiente en `pacal.sanity.studio`. Para ejecutarlo en local:
+The CMS studio is a separate project located at `../pacal-studio` and deployed independently at `pacal.sanity.studio`. To run it locally:
 
 ```bash
 cd ../pacal-studio
 npm install
-npm run dev   # studio disponible en http://localhost:3333
+npm run dev   # studio available at http://localhost:3333
 ```
 
-## Gestión de contenido
+## Content Management
 
-El cliente accede al studio en `pacal.sanity.studio` con su cuenta de Sanity. Desde ahí puede:
+The client accesses the studio at `pacal.sanity.studio` with their Sanity account. From there they can:
 
-- Agregar, editar o eliminar proyectos
-- Subir imagen principal y múltiples imágenes de galería por proyecto
-- Definir precios, ubicación, programa de subsidio y teléfono de contacto
-- Publicar cambios — el sitio se revalida automáticamente en máximo 60 segundos
+- Add, edit, or delete projects
+- Upload a main image and multiple gallery images per project
+- Set prices, location, subsidy program, and contact phone number
+- Publish changes — the site revalidates automatically within 60 seconds
 
-Si no existen proyectos en Sanity, el sitio muestra los datos estáticos definidos en `lib/projects.ts`.
+If no projects exist in Sanity, the site displays the static data defined in `lib/projects.ts`.
 
-## Despliegue
+## Deployment
 
-El sitio está desplegado en Vercel conectado a la rama `main`. Cada push a `main` dispara un despliegue automático. Las siguientes variables de entorno deben configurarse en el dashboard de Vercel en Configuración del Proyecto > Variables de Entorno:
+The site is deployed on Vercel connected to the `main` branch. Every push to `main` triggers an automatic deployment. The following environment variables must be configured in the Vercel dashboard under Project Settings > Environment Variables:
 
 - `NEXT_PUBLIC_SANITY_PROJECT_ID`
 - `NEXT_PUBLIC_SANITY_DATASET`
 
-## Notas técnicas
+## Technical Notes
 
-- El flag `--webpack` en el script de desarrollo es intencional. Turbopack en Windows genera junction points hacia `jsdom` (dependencia transitiva) que fallan por restricciones de permisos del sistema operativo. El build de producción usa el bundler estándar de Next.js y no se ve afectado.
-- El directorio `sanity/schemas/` está excluido de la compilación de TypeScript mediante `tsconfig.json` para evitar conflictos de tipos con el build de Next.js.
+- The `--webpack` flag in the dev script is intentional. Turbopack on Windows creates junction points to `jsdom` (a transitive dependency) that fail due to OS permission restrictions. The production build uses Next.js's standard bundler and is not affected.
+- The `sanity/schemas/` directory is excluded from TypeScript compilation via `tsconfig.json` to avoid type conflicts with the Next.js build.
