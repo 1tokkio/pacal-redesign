@@ -3,7 +3,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Building2 } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/quienes-somos", label: "Quiénes Somos" },
@@ -23,14 +24,15 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Building2 className="w-8 h-8 text-primary" />
-            <div>
-              <span className="text-xl font-bold text-primary tracking-tight">PACAL</span>
-              <span className="hidden sm:block text-[10px] text-text-muted leading-none -mt-0.5">
-                Construyendo Calidad de Vida
-              </span>
-            </div>
+          <Link href="/" className="shrink-0">
+            <Image
+              src="/images/logo.jpg"
+              alt="Pacal"
+              width={48}
+              height={48}
+              className="rounded-lg"
+              priority
+            />
           </Link>
 
           {/* Navegación */}
