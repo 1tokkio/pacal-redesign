@@ -23,10 +23,10 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Building2 className="w-8 h-8 text-primary" />
+          <Link href="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <Building2 className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
             <div>
-              <span className="text-xl font-bold text-primary tracking-tight">PACAL</span>
+              <span className="text-base sm:text-xl font-bold text-primary tracking-tight">PACAL</span>
               <span className="hidden sm:block text-[10px] text-text-muted leading-none -mt-0.5">
                 Construyendo Calidad de Vida
               </span>
